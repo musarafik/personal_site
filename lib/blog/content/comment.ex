@@ -2,11 +2,13 @@ defmodule Blog.Content.Comment do
   use Ecto.Schema
   import Ecto.Changeset
   alias Blog.Content.Post
+  alias Blog.User.User
 
   schema "comments" do
     field :name, :string
     field :content, :string
     belongs_to(:post, Post)
+    belongs_to(:user, User)
 
     timestamps()
   end

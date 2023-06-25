@@ -28,4 +28,10 @@ defmodule Blog.Content do
     |> Repo.preload(:comments)
     |> Post.changeset(attrs)
   end
+
+  def get_post!(id) do
+    Post
+    |> Repo.get!(id)
+    |> Repo.preload(:comments)
+  end
 end

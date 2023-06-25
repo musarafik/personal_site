@@ -1,17 +1,6 @@
-<header flex-auto>
-    <h1>Musa Rafik</h1>
-
-</header>
-<table>
-    <tr>
-        <th>Post</th>
-    </tr>
+<div>
     <%= for post <- @posts do %>
-        <tr>
-            <td><%= post.title %></td>
-        </tr>
-        <tr>
-            <td><%= post.body %></td>
-        </tr>
+        <h1><%= post.title %></h1>
+        <p><%= post.body %></p>
     <% end %>
-</table>
+</div>

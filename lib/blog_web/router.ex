@@ -24,7 +24,14 @@ defmodule BlogWeb.Router do
     get "/:id", ContentController, :show_post
     get "/", ContentController, :home
     post "/", ContentController, :create_post
+  end
 
+  scope "/user", BlogWeb do
+    pipe_through :browser
+    get "/new", UserController, :new_user
+    get "/login", UserController, :show_login
+    post "/signup", UserController, :signup
+    post "/login", UserController,  :login
   end
 
   # Enable LiveDashboard and Swoosh mailbox preview in development
